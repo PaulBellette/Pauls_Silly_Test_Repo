@@ -52,7 +52,8 @@ output_plot = [plot(ri) for ri in reconstructed_images]
 plot(output_plot...)
 
 #So we can get a linear reduction in size by keeping the components of the 
-#outer product U[:, 1:k], S[1:k], V[:, 1:k] and reconstructing via multiplication
+#outer product U[:, 1:k], S[1:k], V[:, 1:k] and reconstructing via matrix 
+#multiplication
 
 #So...
 
