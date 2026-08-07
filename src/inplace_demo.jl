@@ -1,21 +1,27 @@
 function hi!(x::Int)
-    #this doesn't change input because Ints are immutable
+    # This doesn't change the input because Ints are immutable.
+    # This just makes the local name x refer to a new value.
     x = x + 2
     return x
 end
 
 function hi!(x::Array{T,1}) where T <: Real
+    # .= changes the contents of the existing array.
     x .= x .+ 2
     return x
 end
 
 function liar_hi!(x::Array{T,1}) where T <: Real
-    x = x .+ 2 #notice "=" versus ".=", "new thing called x in function" versus "set all the things in x to" 
+    # Notice "=" versus ".="
+    # "=" means "make the local name x refer to a new array"
+    # ".=" means "change the things inside the existing array"
+    x = x .+ 2
     return x
 end
 
 function sneaky_hi(x)
-    #exclaimation marks are a hint to developer, they don't actually do anything
+    # Exclamation marks are a hint to the developer.
+    # They don't actually make Julia do anything special.
     x .= x .+ 2
     return x
 end
